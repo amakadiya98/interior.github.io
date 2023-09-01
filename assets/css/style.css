@@ -102,7 +102,15 @@
 /* header css */
 header{
   font-family: var(--secondaryFont);
-  position: relative;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 90px;
+  z-index: 9999;
+  width: 100%;
+}
+header.scrolled{
+  background-color: #d8c293;
 }
 .navbar{
   position: fixed;
