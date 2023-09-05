@@ -6,46 +6,48 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Schenk</title>
-  
-  <link rel="stylesheet" href="./assets/css/splide.min.css"/>
+
+  <link rel="stylesheet" href="./assets/css/splide.min.css" />
   <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
 <body>
   <header>
-  
+
     <nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark haeder-section">
-     <div class="container">
-        <a class="navbar-brand" href="#" >
+      <div class="container">
+        <a class="navbar-brand" href="#">
           <img src="./assets/images/logo.png" class="brand-logo"></a>
         </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav">
           <span class="navbar-toggler-icon"></span>
         </button>
-      <div class="collapse navbar-collapse" id="main_nav">
-      <ul class="navbar-nav ms-auto">
-        <li>
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li>
-          <a class="nav-link" href="#about-section">About</a>
-        </li>
-        <li>
-          <a class="nav-link" href="#project-section">Projects</a>
-        </li>
-        <li>
-          <a class="nav-link" href="#team-section">Team</a>
-        </li>
-        <li>
-          <a class="nav-link" href="#contact-section">Contact</a>
-        </li>
-      </ul>
-      </div> <!-- navbar-collapse.// -->
-     </div> <!-- container-fluid.// -->
+        <div class="collapse navbar-collapse" id="main_nav">
+          <ul class="navbar-nav ms-auto">
+            <li>
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li>
+              <a class="nav-link" href="#about-section">About</a>
+            </li>
+            <li>
+              <a class="nav-link" href="#project-section">Projects</a>
+            </li>
+            <li>
+              <a class="nav-link" href="#team-section">Team</a>
+            </li>
+            <li>
+              <a class="nav-link" href="#contact-section">Contact</a>
+            </li>
+          </ul>
+        </div> <!-- navbar-collapse.// -->
+      </div> <!-- container-fluid.// -->
     </nav>
-    </header>
+  </header>
 
 
   <!-- <header>
@@ -96,6 +98,26 @@
           Our Dedicated team strives to provide the highest quality of
           workmanship.
         </p>
+      </div>
+    </div>
+  </section>
+  <section class="third-section backFull-image">
+    <div class="container">
+      <div class="content position-relative">
+        <div class="top-text">
+          <h2 class="text">
+            Featured project 
+          </h2>
+          <h3 class="location">
+            croydon,Sydney
+          </h3>
+        </div>
+        <div class="logo-part ">
+          <img src="./assets/images/logo.png" alt="logo">
+        </div>
+        <div class="link-part">
+          <a href="#" class="link">View More <span class="arrow down"></span></a>
+        </div>
       </div>
     </div>
   </section>
@@ -787,7 +809,7 @@
             </div>
             <div class="field">
               <p>Social</p>
-              <i class="fa-brands fa-facebook-f social-icon" ></i>
+              <i class="fa-brands fa-facebook-f social-icon"></i>
               <i class="fa-brands fa-linkedin social-icon"></i>
               <i class="fa-brands fa-instagram social-icon"></i>
             </div>
@@ -849,7 +871,7 @@ Any more information you'd like to add</textarea>
                         class="d-none" />
                       <input id="formFileLg" type="file" class="form-control form-control-lg" placeholder="Upload Image"
                         x-model="fileName" />
-                     
+
                     </div>
                   </div>
                 </div>
@@ -865,7 +887,7 @@ Any more information you'd like to add</textarea>
   </section>
   <script src="./assets/Js/splide.min.js"></script>
   <script src="./assets/Js/bootstrap.bundle.min.js"></script>
-  
+
   <script>
     // window.addEventListener("scroll", function () {
     //   var header = document.querySelector("header");
@@ -931,20 +953,20 @@ Any more information you'd like to add</textarea>
     });
 
 
-    document.addEventListener("DOMContentLoaded", function(){
-  window.addEventListener('scroll', function() {
-      if (window.scrollY > 50) {
-        document.getElementById('navbar_top').classList.add('fixed-top');
-        // add padding top to show content behind navbar
-        navbar_height = document.querySelector('.navbar').offsetHeight;
-        document.body.style.paddingTop = navbar_height + 'px';
-      } else {
-        document.getElementById('navbar_top').classList.remove('fixed-top');
-         // remove padding top from body
-        document.body.style.paddingTop = '0';
-      } 
-  });
-}); 
+    document.addEventListener("DOMContentLoaded", function () {
+      window.addEventListener('scroll', function () {
+        if (window.scrollY > 50) {
+          document.getElementById('navbar_top').classList.add('fixed-top');
+          // add padding top to show content behind navbar
+          navbar_height = document.querySelector('.navbar').offsetHeight;
+          document.body.style.paddingTop = navbar_height + 'px';
+        } else {
+          document.getElementById('navbar_top').classList.remove('fixed-top');
+          // remove padding top from body
+          document.body.style.paddingTop = '0';
+        }
+      });
+    }); 
   </script>
 </body>
 
