@@ -120,38 +120,43 @@
   --primaryFont: "Playfair Display", serif;
   --secondaryFont: "Poppins", sans-serif;
 }
-
-/* header css */
-header {
-  font-family: var(--secondaryFont);
-  position: fixed;
-  top: 0;
-  right: 0;
-  height: 90px;
-  z-index: 9999;
-  width: 100%;
+body{
+  overflow-x: hidden !important;
 }
-
-header.scrolled {
-  background-color: #d8c293;
-}
-
-.navbar {
-  position: fixed;
-  top: 20px;
-  right: 10%;
+.haeder-section{
+  background-color: transparent;
   z-index: 9;
 }
-
-header .navbar-nav .nav-link {
+.haeder-section.fixed-top{
+  background-color: #dc9941 !important;
+}
+.brand-logo{
+  width: 100%;
+}
+.navbar-brand {
+  width: 120px;
+}
+.navbar-dark .navbar-toggler{
+  border: 0;
+}
+.navbar-dark .navbar-toggler:focus{
+  border: 0;
+  box-shadow: none;
+}
+/* header css */
+.navbar-nav .nav-link {
   font-size: 22px;
-  color: #fff;
+  color: #fff !important;
   text-transform: uppercase;
   font-weight: 600;
   position: relative;
+  font-family: var(--secondaryFont);
+  margin-right: 20px;
+} 
+.navbar-nav li:last-child .nav-link{
+  margin-right: 0;
 }
-
-header .navbar-nav li {
+.navbar-nav li {
   position: relative;
 }
 
@@ -216,6 +221,7 @@ header .navbar-nav li:hover::after {
   align-items: center;
   padding-top: 50px;
   background-attachment: fixed;
+  margin-top: -70px;
 }
 
 .second-section {
@@ -270,7 +276,9 @@ header .navbar-nav li:hover::after {
   text-align: center;
   position: relative;
 }
-
+.banner-content-part .logo-part{
+  margin-bottom: 2rem;
+}
 .banner-content-part h3 {
   font-family: var(--secondaryFont);
   font-size: 70px;
@@ -575,7 +583,7 @@ header .navbar-nav li:hover::after {
 }
 
 .project-slider-data {
-  margin-top: 80px;
+  margin-top: 0px;
 }
 
 .project-show-case .project-data:first-child,
@@ -858,7 +866,28 @@ header .navbar-nav li:hover::after {
   transition: linear 2s ease;
 }
 
-
+.navbar-collapse.collapse.show .navbar-nav{
+  position: absolute;
+  height: 100vh;
+  min-width: 230px;
+  max-width: 230px;
+  width: 230px;
+ 
+  background-color: #dc9941;
+  right: 0;
+  top: 70px;
+  padding: 10px 30px;
+  transform: translateX(0px);
+  transition: transform 0.3s;
+}
+.navbar-collapse.collapse .navbar-nav{
+  /* transform: translateX(230px);
+  transition: transform 0.3s; */
+}
+.collapsing{
+  height: 0px !important;
+  transition: none;
+}
 /* -----responsive css start----- */
 
 @media (max-width: 1024px) {
@@ -943,42 +972,41 @@ header .navbar-nav li:hover::after {
     margin-top: 2rem;
   }
 
-  .navbar-dark .navbar-toggler {
+  /* .navbar-dark .navbar-toggler {
     border: none;
     position: absolute;
     z-index: 9;
     top: 20px;
     right: 12px;
-  }
+  } */
 
-  .navbar-toggler:focus {
+  /* .navbar-toggler:focus {
     box-shadow: none;
-  }
+  } */
 
-  .navbar {
+  /* .navbar {
     flex-direction: column;
     align-items: flex-end;
     right: 0;
     top: 0;
     padding: 0;
-  }
+  } */
 
-  .navbar-collapse {
+  /* .navbar-collapse {
     flex-basis: auto;
     position: relative;
-    /* height: 100vh; */
     width: 250px;
     transform: translateX(250px);
     transition:  transform 0.5s;
-  }
+  } */
 
-  .collapse:not(.show) {
+  /* .collapse:not(.show) {
     display: block;
-  }
-  .collapsing{
+  } */
+  /* .collapsing{
     transition: none;
-  }
-  .navbar-collapse.show {
+  } */
+  /* .navbar-collapse.show {
     width: 250px;
     height: 100vh;
     background-color: #fff;
@@ -989,18 +1017,21 @@ header .navbar-nav li:hover::after {
     right: 0;
     transform: translateX(0px);
     transition:  transform 0.5s;
-    /* transition-duration: 0.5s; */
+   
     
-  }
+  } */
 
-  header.scrolled {
-    /* background-color: transparent; */
+  /* header.scrolled {
     height: 70px;
+  } */
+
+  .haeder-section{
+    background-color: #dc9941;
   }
 
   .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     background-image: url('../images/close-Btn.png');
-    transition-duration: 0.5s;
+    filter: invert(1);
   }
 
   .team-member-introduction .team-row{
@@ -1031,6 +1062,9 @@ header .navbar-nav li:hover::after {
 }
 
 @media (max-width: 767px) {
+  .banner-content-part .logo-part img{
+    width: 80% !important;
+  }
   .common-content {
     max-width: 100%;
   }
@@ -1057,7 +1091,7 @@ header .navbar-nav li:hover::after {
   }
 
   .project-slider-data {
-    margin-top: 0;
+    margin-top: 40px;
   }
 
   .project-slider {
@@ -1096,7 +1130,7 @@ header .navbar-nav li:hover::after {
   margin-bottom: 2rem;
 }
 .team-member-introduction .team-row {
-  margin-top: 3rem;
+  margin-top: 4rem;
 }
 .next-project-section .setion-title{
   border-right: 0;
@@ -1106,6 +1140,19 @@ header .navbar-nav li:hover::after {
 }
 .team-member-introduction{
   padding: 80px 0 0;
+}
+.team-member-introduction .team-member-intro .content-part h5{
+  font-size: 30px;
+}
+.team-member-introduction .team-member-name {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+.team-member-introduction .team-member-information {
+  font-size: 16px;
+}
+.project-show-case{
+  padding-bottom: 0;
 }
 }
 
@@ -1170,17 +1217,12 @@ header .navbar-nav li:hover::after {
     font-size: 34px;
   }
 
-  .team-member-introduction .team-member-information{
-    font-size: 18px;
-  }
-
-  .team-member-introduction .team-member-name{
-    font-size: 40px;
-  }
-
 }
 
 @media (max-width: 375px) {
+  .banner-content-part .logo-part img{
+    width: 80% !important;
+  }
   .common-content {
     font-size: 30px;
     line-height: 34px;
@@ -1216,4 +1258,39 @@ header .navbar-nav li:hover::after {
   .next-project-section .setion-title{
     padding-bottom: 30px;
   }
+}
+@media screen and (max-width: 320px) {
+  .team-member-introduction .team-member-intro .image-part img {
+    width: 100%;
+    height: 102%;
+    object-fit: contain;
+    /* object-position: 35% -14%; */
+    transform: rotate(88deg) scale(2);
+}
+.team-member-introduction .team-member-intro .image-part img.team-2{
+  transform: rotate(90deg) scale(1.6);
+}
+.team-member-introduction .team-member-intro .image-part{
+  transform: rotate(-90deg);
+}
+}
+.social-icon{
+  font-size: 28px;
+  margin-right: 10px;
+  color: #4d4b44;
+  cursor: pointer;
+ 
+  transition: all 0.3s;
+}
+.social-icon.fa-facebook-f:hover{
+  color: #1877F2;
+  transform: scale(1.05);
+}
+.social-icon.fa-linkedin:hover{
+  color: #0072b1;
+  transform: scale(1.05);
+}
+.social-icon.fa-instagram:hover{
+  color: #5851DB;
+  transform: scale(1.05);
 }

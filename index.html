@@ -6,16 +6,51 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Schenk</title>
+  
   <link rel="stylesheet" href="./assets/css/splide.min.css"/>
   <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
 <body>
   <header>
+  
+    <nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark haeder-section">
+     <div class="container">
+        <a class="navbar-brand" href="#" >
+          <img src="./assets/images/logo.png" class="brand-logo"></a>
+        </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      <div class="collapse navbar-collapse" id="main_nav">
+      <ul class="navbar-nav ms-auto">
+        <li>
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li>
+          <a class="nav-link" href="#about-section">About</a>
+        </li>
+        <li>
+          <a class="nav-link" href="#project-section">Projects</a>
+        </li>
+        <li>
+          <a class="nav-link" href="#team-section">Team</a>
+        </li>
+        <li>
+          <a class="nav-link" href="#contact-section">Contact</a>
+        </li>
+      </ul>
+      </div> <!-- navbar-collapse.// -->
+     </div> <!-- container-fluid.// -->
+    </nav>
+    </header>
+
+
+  <!-- <header>
     <div class="container">
       <nav class="navbar navbar-expand-lg navbar-dark ">
-        <!-- <a class="navbar-brand" href="#">Navbar</a> -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
           aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -41,7 +76,7 @@
         </div>
       </nav>
     </div>
-  </header>
+  </header> -->
   <section class="banner-section backFull-image">
     <div class="container">
       <div class="banner-content-part">
@@ -107,14 +142,14 @@
       <img src="assets/images/Web/about-us.jpg" alt="about-us" class="about-banner" />
     </div>
     <div class="container">
-      <h3 class="setion-title py-5">About us</h3>
-      <div class="row with-underline">
-        <div class="col-md-12 col-lg-5">
+      <h3 class="setion-title py-5 ps-2">About us</h3>
+      <div class="row with-underline align-items-start">
+        <div class="col-md-12 col-lg-5 ">
           <div class="image-part">
             <img src="assets/images/Web/about-content.jpg" alt="about-content" class="about-content" />
           </div>
         </div>
-        <div class="col-md-12 col-lg-7">
+        <div class="offset-lg-1 col-md-12 col-lg-6">
           <div class="content-part">
             <p>
               Schenk Construction Group was established in 2014 by founder
@@ -752,12 +787,12 @@
             </div>
             <div class="field">
               <p>Social</p>
-              <a href="">facebook</a>
-              <a href="">Linkdin</a>
-              <a href="">Instagram</a>
+              <i class="fa-brands fa-facebook-f social-icon" ></i>
+              <i class="fa-brands fa-linkedin social-icon"></i>
+              <i class="fa-brands fa-instagram social-icon"></i>
             </div>
             <div class="field">
-              <p class="right-no">ABN 14 169 703 771</p>
+              <p class="">ABN 14 169 703 771</p>
             </div>
           </div>
         </div>
@@ -814,7 +849,7 @@ Any more information you'd like to add</textarea>
                         class="d-none" />
                       <input id="formFileLg" type="file" class="form-control form-control-lg" placeholder="Upload Image"
                         x-model="fileName" />
-                      <!-- <button class="browse btn px-4" type="button" x-on:click.prevent="$refs.file.click()">Browse</button> -->
+                     
                     </div>
                   </div>
                 </div>
@@ -828,18 +863,18 @@ Any more information you'd like to add</textarea>
       </div>
     </div>
   </section>
-
-  <script src="./assets/Js/bootstrap.bundle.min.js"></script>
   <script src="./assets/Js/splide.min.js"></script>
+  <script src="./assets/Js/bootstrap.bundle.min.js"></script>
+  
   <script>
-    window.addEventListener("scroll", function () {
-      var header = document.querySelector("header");
-      if (window.scrollY > 100) {
-        header.classList.add("scrolled");
-      } else {
-        header.classList.remove("scrolled");
-      }
-    });
+    // window.addEventListener("scroll", function () {
+    //   var header = document.querySelector("header");
+    //   if (window.scrollY > 100) {
+    //     header.classList.add("scrolled");
+    //   } else {
+    //     header.classList.remove("scrolled");
+    //   }
+    // });
 
     document.addEventListener("DOMContentLoaded", function () {
       // splide initialization for slider-1
@@ -894,6 +929,22 @@ Any more information you'd like to add</textarea>
         speed: 5000,
       }).mount();
     });
+
+
+    document.addEventListener("DOMContentLoaded", function(){
+  window.addEventListener('scroll', function() {
+      if (window.scrollY > 50) {
+        document.getElementById('navbar_top').classList.add('fixed-top');
+        // add padding top to show content behind navbar
+        navbar_height = document.querySelector('.navbar').offsetHeight;
+        document.body.style.paddingTop = navbar_height + 'px';
+      } else {
+        document.getElementById('navbar_top').classList.remove('fixed-top');
+         // remove padding top from body
+        document.body.style.paddingTop = '0';
+      } 
+  });
+}); 
   </script>
 </body>
 
